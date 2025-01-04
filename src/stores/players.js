@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 import { usePlayerStore } from './player'
 
@@ -18,8 +18,13 @@ export const usePlayersStore = defineStore('players', () => {
     }
   }
 
+  const currentPlayer = computed(() => {
+    return players.value[currentPlayerIndex.value]
+  })
+
   return {
     addPlayer,
+    currentPlayer,
     currentPlayerIndex,
     nextPlayersTurn,
     players,

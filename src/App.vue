@@ -2,8 +2,8 @@
 import { ref } from 'vue'
 import { usePlayersStore } from '@/stores/players'
 
+import CurrentTurn from './components/CurrentTurn.vue'
 import PlayerSetup from './components/PlayerSetup.vue'
-import DieFace from './components/DieFace.vue'
 import SidebarPlayer from './components/SidebarPlayer.vue'
 
 const gameStarted = ref(false)
@@ -24,12 +24,7 @@ const playerStore = usePlayersStore()
           </template>
         </div>
         <div>
-          <DieFace :side="1" />
-          <DieFace :side="2" />
-          <DieFace :side="3" />
-          <DieFace :side="4" />
-          <DieFace :side="5" />
-          <DieFace :side="6" />
+          <CurrentTurn />
         </div>
       </div>
     </template>
