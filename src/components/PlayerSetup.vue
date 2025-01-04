@@ -16,7 +16,7 @@ const add = () => {
 <template>
   <form @submit.prevent="add">
     <fieldset role="group">
-      <input name="name" type="text" v-model="name" placeholder="Enter your name" />
+      <input name="name" type="text" v-model="name" placeholder="Enter your name" required />
       <input type="submit" value="Add" />
     </fieldset>
   </form>
