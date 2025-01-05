@@ -12,7 +12,11 @@ export const useCurrentTurnStore = defineStore('currentTurn', () => {
   }
 
   const add = function(value) {
-    toLockIn.value.push(value)
+    if (toLockIn.value.length === 6) {
+      alert("You can't lock in more than 6 dice")
+    } else {
+      toLockIn.value.push(value)
+    }
   }
 
   const reset = function() {
