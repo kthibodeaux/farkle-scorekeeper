@@ -48,6 +48,7 @@ export const useCurrentTurnStore = defineStore('currentTurn', () => {
     add,
     clear,
     lock,
+    lockedIn,
     remove,
     reset,
     toBankScore,

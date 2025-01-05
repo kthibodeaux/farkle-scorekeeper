@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { usePlayersStore } from '@/stores/players'
 
 import CurrentTurn from './components/CurrentTurn.vue'
+import CurrentTurnLockedIn from './components/CurrentTurnLockedIn.vue'
 import PlayerSetup from './components/PlayerSetup.vue'
 import SidebarPlayer from './components/SidebarPlayer.vue'
 
@@ -22,6 +23,7 @@ const playerStore = usePlayersStore()
             <SidebarPlayer :name="player.name" :score="player.score"
               :is-current-turn="playerStore.currentPlayerIndex === index" />
           </template>
+          <CurrentTurnLockedIn />
         </div>
         <div>
           <CurrentTurn />
