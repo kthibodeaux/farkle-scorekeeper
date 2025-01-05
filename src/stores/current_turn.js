@@ -7,8 +7,11 @@ export const useCurrentTurnStore = defineStore('currentTurn', () => {
   const toLockIn = ref([])
 
   const lock = function() {
-    lockedIn.value.push(toLockIn.value)
-    toLockIn.value = []
+    if (toLockIn.value.length === 0) {
+    } else {
+      lockedIn.value.push(toLockIn.value)
+      toLockIn.value = []
+    }
   }
 
   const add = function(value) {
