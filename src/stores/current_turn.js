@@ -32,6 +32,18 @@ export const useCurrentTurnStore = defineStore('currentTurn', () => {
     toLockIn.value.splice(index, 1)
   }
 
+  const undo = function() {
+    console.log('undo')
+    if (toLockIn.value.length === 0 && lockedIn.value.length > 0) {
+      console.log('undo 2')
+      toLockIn.value = lockedIn.value.pop()
+    }
+  }
+
+  const canUndo = computed(() => {
+    return toLockIn.value.length === 0 && lockedIn.value.length > 0
+  })
+
   const lockedInScore = computed(() => {
     return lockedIn.value.reduce((acc, val) => acc + calculateScore(val), 0)
   })
@@ -46,6 +58,7 @@ export const useCurrentTurnStore = defineStore('currentTurn', () => {
 
   return {
     add,
+    canUndo,
     clear,
     lock,
     lockedIn,
@@ -54,5 +67,6 @@ export const useCurrentTurnStore = defineStore('currentTurn', () => {
     toBankScore,
     toLockIn,
     toLockInScore,
+    undo,
   }
 })
