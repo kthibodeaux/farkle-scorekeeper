@@ -11,6 +11,17 @@ const add = () => {
   playerStore.addPlayer(name.value)
   name.value = null
 }
+
+const startGame = function () {
+  window.addEventListener('beforeunload', function (e) {
+    e.preventDefault()
+    e.returnValue = ''
+
+    return 'All score data will be lost. Are you sure you want to leave?'
+  })
+
+  emit('submit')
+}
 </script>
 
 <template>
@@ -27,5 +38,5 @@ const add = () => {
   </ul>
   <br />
   <br />
-  <input type="button" @click="emit('submit')" value="Start Game" />
+  <input type="button" @click="startGame" value="Start Game" />
 </template>
