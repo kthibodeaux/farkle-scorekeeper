@@ -34,13 +34,14 @@ const reset = function () {
   <DieFace :side="5" @click="add" />
   <DieFace :side="6" @click="add" />
   <hr />
-  <input type="submit" @click="currentTurn.clear" value="Clear" />
-  <br />
-  <input type="submit" @click="currentTurn.lock" :value="`Lock ${currentTurn.toLockInScore}`" />
-  <br />
-  <input type="submit" @click="reset" value="Bust" />
-  <br />
-  <input type="submit" @click="bank" :value="`Bank ${currentTurn.toBankScore}`" />
+  <div class="grid">
+    <div><input type="submit" @click="currentTurn.clear" value="Clear" /></div>
+    <div><input type="submit" @click="reset" value="Bust" /></div>
+  </div>
+  <div class="grid">
+    <div><input type="submit" @click="currentTurn.lock" :value="`Lock ${currentTurn.toLockInScore}`" /></div>
+    <div><input type="submit" @click="bank" :value="`Bank ${currentTurn.toBankScore}`" /></div>
+  </div>
   <hr />
   <DieFace v-for="(side, index) in currentTurn.toLockIn" :key="index" :side="side" @click="remove(index)" />
 </template>
