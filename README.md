@@ -17,3 +17,9 @@ yarn build
 ```sh
 yarn lint
 ```
+
+### Deploy
+
+```sh
+yarn build; aws s3 sync dist s3://farkle-scorekeeper
+```
