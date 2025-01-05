@@ -5,9 +5,3 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
-
-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}

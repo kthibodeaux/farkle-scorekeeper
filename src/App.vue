@@ -19,13 +19,15 @@ const playerStore = usePlayersStore()
     <template v-else>
       <div class="main-grid">
         <div>
-          <template v-for="(player, index) in playerStore.players" :key="player.name">
-            <SidebarPlayer :name="player.name" :score="player.score"
-              :is-current-turn="playerStore.currentPlayerIndex === index" />
-          </template>
           <CurrentTurnLockedIn />
         </div>
-        <div>
+        <div style="margin-left: 20px;">
+          <div class="grid">
+            <template v-for="(player, index) in playerStore.players" :key="player.name">
+              <SidebarPlayer :name="player.name" :score="player.score"
+                :is-current-turn="playerStore.currentPlayerIndex === index" />
+            </template>
+          </div>
           <CurrentTurn />
         </div>
       </div>

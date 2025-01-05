@@ -8,11 +8,8 @@ defineProps({
 
 <template>
   <div>
-    <span v-if="isCurrentTurn">-></span>
-    {{ name }}
+    <span v-if="isCurrentTurn">-></span> {{ name }}
     <br />
     {{ score }}
   </div>
-  <br />
-  <br />
 </template>

@@ -9,8 +9,6 @@ const currentTurn = useCurrentTurnStore()
 
 <template>
   <div>
-    <br />
-    <br />
     <input :disabled="!currentTurn.canUndo" type="submit" class="secondary" @click="currentTurn.undo"
       value="Undo Last" />
   </div>
