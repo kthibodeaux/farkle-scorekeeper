@@ -8,6 +8,6 @@ const currentTurn = useCurrentTurnStore()
 
 <template>
   <div v-for="(roll, index) in currentTurn.lockedIn" :key="index">
-    <DieFace v-for="(side, index) in roll" :key="index" :side="side" size="1em" />
+    <DieFace v-for="(side, index) in roll" :key="index" :side="side" size="1em" :clickable="false" />
   </div>
 </template>
