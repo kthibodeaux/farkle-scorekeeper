@@ -1,5 +1,9 @@
 # farkle-scorekeeper
 
+### Public URL
+
+You can access a publicly hosted instance of this app here: https://farkle-scorekeeper.s3.amazonaws.com/index.html
+
 ### Compile and Hot-Reload for Development
 
 ```sh
