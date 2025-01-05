@@ -8,13 +8,13 @@ const currentTurn = useCurrentTurnStore()
 </script>
 
 <template>
-  <div v-for="(roll, index) in currentTurn.lockedIn" :key="index">
-    <DieFace v-for="(side, index) in roll" :key="index" :side="side" size="1em" :clickable="false" />
-    = {{ calculateScore(roll) }}
-  </div>
   <div v-if="currentTurn.canUndo">
     <br />
     <br />
-    <button class="secondary" @click="currentTurn.undo">Undo</button>
+    <input type="submit" class="secondary" @click="currentTurn.undo" value="Undo Last" />
+  </div>
+  <div v-for="(roll, index) in currentTurn.lockedIn" :key="index">
+    <DieFace v-for="(side, index) in roll" :key="index" :side="side" size="1em" :clickable="false" />
+    = {{ calculateScore(roll) }}
   </div>
 </template>
