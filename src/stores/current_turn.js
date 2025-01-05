@@ -24,6 +24,10 @@ export const useCurrentTurnStore = defineStore('currentTurn', () => {
     toLockIn.value = []
   }
 
+  const remove = function(index) {
+    toLockIn.value.splice(index, 1)
+  }
+
   const lockedInScore = computed(() => {
     return lockedIn.value.reduce((acc, val) => acc + calculateScore(val), 0)
   })
@@ -40,6 +44,7 @@ export const useCurrentTurnStore = defineStore('currentTurn', () => {
     add,
     clear,
     lock,
+    remove,
     reset,
     toBankScore,
     toLockIn,

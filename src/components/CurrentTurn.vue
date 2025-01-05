@@ -16,6 +16,10 @@ const bank = function () {
   reset()
 }
 
+const remove = function (index) {
+  currentTurn.remove(index)
+}
+
 const reset = function () {
   currentTurn.reset()
   players.nextPlayersTurn()
@@ -38,5 +42,5 @@ const reset = function () {
   <br />
   <input type="submit" @click="bank" :value="`Bank ${currentTurn.toBankScore}`" />
   <hr />
-  <DieFace v-for="(side, index) in currentTurn.toLockIn" :key="index" :side="side" />
+  <DieFace v-for="(side, index) in currentTurn.toLockIn" :key="index" :side="side" @click="remove(index)" />
 </template>
