@@ -13,7 +13,7 @@ const currentTurn = useCurrentTurnStore()
       value="Undo Last" />
   </div>
   <div v-for="(roll, index) in currentTurn.lockedIn" :key="index">
-    <DieFace v-for="(side, index) in roll" :key="index" :side="side" size="1em" :clickable="false" />
+    <DieFace v-for="(side, index) in roll" :key="index" :side="side" />
     = {{ calculateScore(roll) }}
   </div>
 </template>

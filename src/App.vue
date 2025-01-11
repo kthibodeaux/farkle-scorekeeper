@@ -4,6 +4,7 @@ import { usePlayersStore } from '@/stores/players'
 
 import CurrentTurn from './components/CurrentTurn.vue'
 import CurrentTurnLockedIn from './components/CurrentTurnLockedIn.vue'
+import HowToScore from './components/HowToScore.vue'
 import PlayerSetup from './components/PlayerSetup.vue'
 import SidebarPlayer from './components/SidebarPlayer.vue'
 
@@ -31,6 +32,7 @@ const playerStore = usePlayersStore()
           <CurrentTurn />
         </div>
       </div>
+      <HowToScore />
     </template>
   </main>
 </template>

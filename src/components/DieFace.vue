@@ -2,9 +2,9 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  clickable: { type: Boolean, default: true },
-  side: Number,
-  size: { type: String, default: '6em' },
+  clickable: { type: Boolean, default: false },
+  side: [String, Number],
+  large: { type: Boolean, default: false },
 })
 
 const emit = defineEmits(['click'])
@@ -18,7 +18,7 @@ const dieClasses = computed(() => {
 
 const dieStyle = computed(() => {
   return {
-    fontSize: props.size,
+    fontSize: props.large ? '6em' : '1em',
   }
 })
 </script>
