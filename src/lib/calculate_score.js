@@ -5,7 +5,8 @@ function tally(array) {
   }, new Map());
 }
 
-const calculateScore = function(dice) {
+const calculateScore = function(diceArray) {
+  let dice = diceArray.map(d => Number(d))
   let score = 0
 
   // six of a kind
